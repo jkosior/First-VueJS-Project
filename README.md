@@ -1,3 +1,4 @@
 # First VueJS Project
 
-VueJS Project made with freeCodeCamp tutorial, personalized.
+Project made with freeCodeCamp tutorial, personalized.
+Using: VueJS, ExpressJS
