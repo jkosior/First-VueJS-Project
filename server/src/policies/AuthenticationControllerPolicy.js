@@ -5,7 +5,7 @@ module.exports = {
         const schema = {
             email: Joi.string().email(),
             password: Joi.string().regex(
-                new RegExp('^[a-z-A-Z0-9\!\@\#\$\%\^\*\&\(\)\_\-]{8.32}$');
+                new RegExp('^[a-z-A-Z0-9\!\@\#\$\%\^\*\&\(\)\_\-]{8.32}$')
             )
         };
 
@@ -26,9 +26,12 @@ module.exports = {
                     });
                     break;
                 default:
+                    res.status(400).send({
+                        error: "invalid registration information"
+                    });
             }
         }else{
             next()
         }
-    };
+    }
 };
