@@ -2,7 +2,7 @@
     <div>
         <h1>Register</h1>
 
-        <input type="text" name="email" placeholder="email" v-model="email"/>
+        <input type="email" name="email" placeholder="email" v-model="email"/>
         <br />
         <input type="password" name="password" placeholder="passoword" v-model="passoword"/>
         <br />
@@ -18,12 +18,12 @@ export default {
         email:'abc',
         password:'123'
     };
-  }
+  },
   watch: {
       email(value){
           console.log("email changed value", value);
       }
-  }
+  },
   methods:{
       async register(){
           //   console.log("register button was clicked", this.email, this.password)
@@ -34,7 +34,7 @@ export default {
           });
         //   console.log(response.data);
       }
-  }
+  },
   mounted (){
       setTimeout(() =>{
           this.email = "hello world"
@@ -42,5 +42,3 @@ export default {
   }
 }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
