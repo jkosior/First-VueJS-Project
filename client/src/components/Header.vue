@@ -1,7 +1,9 @@
 <template>
-    <v-toolbar fixed class="cyan" dark>
+    <v-toolbar fixed class="blue" dark>
         <v-toolbar-title class="mr-4">
-            FoodieTracker
+            <span class="home" @click="navigateTo({name: 'root'})">
+                FoodieTracker
+            </span>
         </v-toolbar-title>
 
         <v-toolbar-items>
@@ -28,5 +30,10 @@ export default {
 }
 </script>
 <style scoped>
-
+    .home{
+        cursor: pointer;
+    }
+    .home:hover{
+        color: #E9E;
+    }
 </style>
