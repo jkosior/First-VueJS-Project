@@ -26,7 +26,7 @@
                     ></v-text-field>
                     <br />
                     <div
-                        class="error"
+                        id="error"
                         v-html="error"
                     />
                     <br />
@@ -65,7 +65,7 @@ export default {
 }
 </script>
 <style scoped>
-    .error{
+    #error{
         color:red;
     }
     input{

@@ -14,7 +14,6 @@ module.exports = (app) =>{
         AuthController.register
     );
     app.post("/login",
-        AuthControllerPolicy.register,
         AuthController.login
     );
 };
