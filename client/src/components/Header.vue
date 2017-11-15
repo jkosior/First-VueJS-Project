@@ -14,6 +14,10 @@
         <v-spacer></v-spacer>
         <v-toolbar-items>
             <v-btn flat dark
+                @click="navigateTo({name:'login'})">
+                Login
+            </v-btn>
+            <v-btn flat dark
                 @click="navigateTo({name:'register'})">
                     Sign up
             </v-btn>
@@ -21,6 +25,8 @@
     </v-toolbar>
 </template>
 <script>
+
+/* eslint-disable indent */
 export default {
     methods: {
         navigateTo (route) {

@@ -14,12 +14,12 @@ module.exports = {
             switch(error.details[0].context.key){
                 case 'email':
                     res.status(400).send({
-                        message: "Please provide valid email address"
+                        error: "Please provide valid email address"
                     });
                     break;
                 case 'password':
                     res.status(400).send({
-                        message: `The password provided failed to match the following rules;
+                        error: `The password provided failed to match the following rules;
                         <br>
                         1. It must contain ONLY the following characters : lower case, uppsercase, 0-9,  ! @ # $ % ^ * & ( ) _ -.
                         2. It must be 8 to 32 characters long.`

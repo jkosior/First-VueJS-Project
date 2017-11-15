@@ -2,7 +2,7 @@
     <v-layout column>
         <v-flex xs6 offset-xs3>
             <div class="white elevation-2">
-                <v-toolbar flat dense class="cyan" dark>
+                <v-toolbar flat dense class="blue" dark>
                     <v-toolbar-title>Register</v-toolbar-title>
                 </v-toolbar>
                 <div class="pl-4 pr-4 pt-2 pb-2">
@@ -16,12 +16,14 @@
                     </v-text-field>
                     <br />
                     <v-text-field
-                        name="password"
-                        label="Password"
-                        value="password"
-                        class="input-group-focused"
-                        v-model="password"
-                    >
+                      name="password"
+                      label="Password"
+                      hint="At least 8 characters"
+                      v-model="password"
+                      min="8"
+                      :type="'password'"
+                      counter
+                    ></v-text-field>
                     </v-text-field>
                     <br />
                     <div
@@ -29,7 +31,7 @@
                         v-html="error"
                     />
                     <br />
-                        <v-btn class="cyan" @click="register" dark>Register</v-btn>
+                        <v-btn class="blue" @click="register" dark>Register</v-btn>
                 </div>
             </div>
         </v-flex>
