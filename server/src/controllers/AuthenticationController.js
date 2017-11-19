@@ -34,7 +34,9 @@ module.exports = {
     /* login method */
     async login(req, res){
         try{
-            const{email, password} = req.body;
+            const {email, password} = req.body;
+            console.log({email, password})
+            console.log(User.findOne);
 
             const user = await User.findOne({
                 where: {
@@ -42,9 +44,10 @@ module.exports = {
                     password: password
                 }
             });
+            console.log(user);
 
             if(!user){
-                return res.send(403).send({
+                return res.status(403).send({
                     error: "The login information was incorrect"
                 });
             }
@@ -52,7 +55,7 @@ module.exports = {
             const isPasswordValid = await User.comparePassword(user.password);
 
             if(!isPasswordValid) {
-                return res.send(403).send({
+                return res.status(403).send({
                     error: "The login information was incorrect"
                 });
             }
@@ -65,6 +68,7 @@ module.exports = {
             });
 
         }catch(err){
+            console.log(err)
             res.status(500).send({
                 error: "An error has occured trying to log in."
             });
