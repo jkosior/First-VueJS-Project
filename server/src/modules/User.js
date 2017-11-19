@@ -9,10 +9,10 @@ const hashPassword = (user, options) =>{
     }
 
     return bcrypt
-        .genSaltAsync(bcrypt)
+        .genSaltAsync(SALT_FACTOR)
         .then(salt => bcrypt.hashAsync(user.password, salt, null))
         .then(hash => {
-            user.serDataValue("password", hash)
+            user.setDataValue("password", hash)
         })
 };
 

@@ -16,6 +16,7 @@ module.exports = {
         console.log(User.create)
         try{
             const user = await User.create(req.body);
+            console.log(user)
             const userJson = user.toJSON();
 
             res.send({
@@ -23,6 +24,7 @@ module.exports = {
                 token: jwtSignUser(userJson)
             });
         }catch(err){
+            console.log(err)
             res.status(400).send({
                 error: "This email is already in use."
             });
