@@ -36,15 +36,13 @@ module.exports = {
         try{
             const {email, password} = req.body;
             console.log({email, password})
-            console.log(User.findOne);
 
             const user = await User.findOne({
                 where: {
-                    email: email,
-                    password: password
+                    email: email
                 }
             });
-            console.log(user);
+            console.log(user.email, user.password);
 
             if(!user){
                 return res.status(403).send({
@@ -52,7 +50,7 @@ module.exports = {
                 });
             }
 
-            const isPasswordValid = await User.comparePassword(user.password);
+            const isPasswordValid = await user.comparePassword(password);
 
             if(!isPasswordValid) {
                 return res.status(403).send({
